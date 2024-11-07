@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=r8152
-PKG_VERSION:=2.18.1
+PKG_VERSION:=2.19.2
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
@@ -28,7 +28,7 @@ define KernelPackage/usb-net-rtl8152-vendor/description
 endef
 
 define Build/Compile
-	$(KERNEL_MAKE) M=$(PKG_BUILD_DIR) modules
+	+$(KERNEL_MAKE) M=$(PKG_BUILD_DIR) modules
 endef
 
 $(eval $(call KernelPackage,usb-net-rtl8152-vendor))
